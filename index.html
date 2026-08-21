@@ -3,100 +3,169 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>My Neighbors 1ST - Contributions & Loans</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f4f7fb;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
       color: #222;
       line-height: 1.6;
     }
 
     header {
-      background-color: blue;
+      background: linear-gradient(135deg, #0047ab, #0077cc);
       color: white;
       text-align: center;
-      padding: 30px 15px;
+      padding: 55px 20px;
     }
 
     header h1 {
+      font-size: 38px;
+      margin: 0 0 10px;
+    }
+
+    header p {
+      font-size: 18px;
       margin: 0;
     }
 
     nav {
-      background-color: white;
+      background: white;
       text-align: center;
-      padding: 15px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 15px 10px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
     }
 
     nav a {
-      color: blue;
+      color: #0047ab;
       text-decoration: none;
       font-weight: bold;
-      margin: 8px;
+      margin: 6px 10px;
       display: inline-block;
     }
 
-    section {
-      background-color: white;
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    nav a:hover {
+      text-decoration: underline;
     }
 
-    h2 {
-      color: blue;
+    .hero {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 40px 25px;
+      text-align: center;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+    }
+
+    .hero h2 {
+      color: #0047ab;
+      font-size: 30px;
+      margin-top: 0;
+    }
+
+    .hero p {
+      font-size: 18px;
     }
 
     .button {
       display: inline-block;
-      background-color: blue;
+      background: #0047ab;
       color: white;
-      padding: 12px 20px;
+      padding: 13px 24px;
+      border-radius: 7px;
       text-decoration: none;
-      border-radius: 5px;
       font-weight: bold;
       margin-top: 10px;
     }
 
+    .button:hover {
+      background: #003580;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 25px auto;
+      padding: 30px 25px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      color: #0047ab;
+      margin-top: 0;
+    }
+
+    ul {
+      padding-left: 25px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .contact-box {
+      text-align: center;
+    }
+
     .contact-button {
-      background-color: blue;
+      background: #0047ab;
       color: white;
-      padding: 10px 20px;
       border: none;
-      border-radius: 5px;
+      padding: 13px 22px;
+      border-radius: 7px;
       font-size: 16px;
+      font-weight: bold;
       cursor: pointer;
     }
 
+    .contact-button:hover {
+      background: #003580;
+    }
+
     .email {
-      color: blue;
+      color: #0047ab;
       font-weight: bold;
+      text-decoration: none;
     }
 
     footer {
-      text-align: center;
-      padding: 20px;
-      background-color: blue;
+      background: #003580;
       color: white;
-      margin-top: 30px;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 35px;
     }
 
     @media (max-width: 600px) {
-      section {
-        margin: 15px 10px;
-        padding: 20px;
+      header h1 {
+        font-size: 30px;
+      }
+
+      .hero h2 {
+        font-size: 25px;
       }
 
       nav a {
-        display: block;
-        margin: 10px;
+        display: inline-block;
+        margin: 5px;
+      }
+
+      section {
+        margin: 15px 10px;
+        padding: 25px 18px;
       }
     }
   </style>
@@ -111,32 +180,50 @@
 
   <nav>
     <a href="#how-it-works">How It Works</a>
-    <a href="#loans">Loans</a>
     <a href="#contributions">Contributions</a>
+    <a href="#loans">Loans</a>
     <a href="#about">About Us</a>
-    <a href="#membership">Membership</a>
-    <a href="#contact">Contact Us</a>
+    <a href="#contact">Contact</a>
   </nav>
+
+  <div class="hero">
+    <h2>Building a Stronger Community Together</h2>
+
+    <p>
+      Welcome to My Neighbors 1ST, a community contribution
+      and financial support platform designed to help members
+      save regularly and support one another.
+    </p>
+
+    <a href="#contact" class="button">Get Started</a>
+  </div>
 
   <section id="how-it-works">
     <h2>How It Works</h2>
+
     <p>
       Members contribute money regularly and can apply for loans
       when they need financial support.
     </p>
+
     <p>
-      You can contribute any amount, but an additional ₦200 will
-      be added to each contribution.
+      You can contribute any amount, but an additional ₦200
+      will be added to each contribution.
     </p>
-    <p>Contributions are collected every Saturday.</p>
+
+    <p>
+      Contributions are collected every Saturday.
+    </p>
   </section>
 
   <section id="contributions">
     <h2>Contributions</h2>
+
     <p>
-      Members can contribute any amount they choose, together with
-      the additional ₦200 contribution charge.
+      Members can contribute any amount they choose together
+      with the additional ₦200 contribution charge.
     </p>
+
     <p>
       Contributions are collected every Saturday.
     </p>
@@ -144,10 +231,12 @@
 
   <section id="loans">
     <h2>Loans</h2>
+
     <p>
       Members may apply for financial support through the loan
       program when they need assistance.
     </p>
+
     <p>
       Loan conditions and repayment arrangements will be provided
       by the group.
@@ -156,15 +245,17 @@
 
   <section id="about">
     <h2>About My Neighbors 1ST</h2>
+
     <p>
-      My Neighbors 1ST is a community contribution and loan platform
-      created to help members save money regularly and support one
-      another financially.
+      My Neighbors 1ST is a community contribution and loan
+      platform created to help members save money regularly
+      and support one another financially.
     </p>
   </section>
 
   <section>
     <h2>Why Join My Neighbors 1ST?</h2>
+
     <ul>
       <li>Contribute money regularly.</li>
       <li>Get financial support when you need it.</li>
@@ -173,20 +264,9 @@
     </ul>
   </section>
 
-  <section id="membership">
-    <h2>Membership</h2>
-    <p>
-      Become a member of My Neighbors 1ST and take part in our
-      contribution and loan activities.
-    </p>
-    <p>
-      Members are expected to contribute regularly and follow the
-      rules of the group.
-    </p>
-  </section>
-
   <section>
     <h2>Our Services</h2>
+
     <ul>
       <li>Regular contributions</li>
       <li>Loan support for members</li>
@@ -196,19 +276,24 @@
   </section>
 
   <section>
-    <h2>Get Started</h2>
+    <h2>Membership</h2>
+
     <p>
-      Ready to become part of My Neighbors 1ST?
+      Become a member of My Neighbors 1ST and take part in
+      our contribution and loan activities.
     </p>
 
-    <a href="#contact" class="button">Get Started</a>
+    <p>
+      Members are expected to contribute regularly and follow
+      the rules of the group.
+    </p>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="contact-box">
     <h2>Contact Us</h2>
 
-    <p style="font-weight: bold; font-size: 20px;">
-      Call us for more information
+    <p>
+      <strong>Call us for more information</strong>
     </p>
 
     <button
@@ -233,3 +318,5 @@
 
 </body>
 </html>
+
+
