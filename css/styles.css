@@ -1,0 +1,153 @@
+/* styles.css — extracted from index.html
+   Small external stylesheet for My Neighbors 1ST
+*/
+:root{
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --brand: #0b63d6; /* accessible blue */
+  --brand-dark: #084b9b;
+  --text: #222;
+  --muted: #556;
+  --radius: 10px;
+  --max-width: 900px;
+  --gap: 20px;
+  --accent: #0b63d6;
+}
+
+/* Reset / base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -10;
+}
+.skip-link:focus {
+  position: static;
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  padding: 12px;
+  background: var(--brand);
+  color: white;
+  z-index: 999;
+}
+
+header {
+  background: linear-gradient(180deg, var(--brand), var(--brand-dark));
+  color: white;
+  text-align: center;
+  padding: 28px 16px;
+}
+header h1{margin:0;font-size:1.6rem}
+header p{margin:6px 0 0;color:rgba(255,255,255,0.95)}
+
+/* Navigation */
+.nav-wrap {
+  background: var(--surface);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+}
+.nav-container{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding: 10px 16px;
+}
+.brand-inline{display:none} /* kept for future logo */
+.nav-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+.nav-list a {
+  color: var(--brand);
+  text-decoration: none;
+  font-weight:600;
+  padding:8px 10px;
+  border-radius:6px;
+}
+.nav-list a:hover,
+.nav-list a:focus{background:rgba(11,99,214,0.08); outline:none}
+
+.menu-toggle {
+  display:none;
+  background:transparent;
+  border:0;
+  color:var(--brand);
+  font-weight:700;
+  cursor:pointer;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 24px auto;
+  padding: 0 16px 48px;
+}
+
+section.card {
+  background: var(--surface);
+  padding: 22px;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: var(--gap);
+}
+
+h2 { color: var(--brand); margin-top:0; font-size:1.25rem; }
+p { color: var(--muted); margin:0 0 12px 0; }
+ul{ margin:8px 0 12px 20px; }
+
+.button, .contact-button {
+  display:inline-block;
+  background:var(--accent);
+  color:white;
+  padding:10px 16px;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:700;
+  border: none;
+  cursor:pointer;
+}
+.contact-button { font-size:1rem; }
+
+/* Focus styles for keyboard users */
+:focus { outline: 3px solid rgba(11,99,214,0.18); outline-offset: 2px; }
+:focus:not(:focus-visible) { outline: none; }
+
+footer{
+  text-align:center;
+  padding:18px 16px;
+  background: linear-gradient(180deg,var(--brand-dark),var(--brand));
+  color:white;
+  margin-top:30px;
+}
+
+/* Responsive nav */
+@media (max-width: 800px) {
+  .nav-list{ display:none; flex-direction:column; gap:0; width:100%;}
+  .nav-list.show{ display:flex; }
+  .menu-toggle{ display:inline-block; }
+  .nav-container{ align-items:flex-start; flex-direction:column; gap:8px; }
+}
